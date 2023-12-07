@@ -64,9 +64,22 @@ void ubahData(vector<laptop>& data) {
 }
 
 //Hapus data
-
-
-
+void hapusData(vector<laptop>& data) {
+  if (data.empty()) {
+    cout << "Tidak ada data laptop yang dapat dihapus.\n";
+    return;
+  }
+  int indeks;
+  cout << "Masukkan nomor data laptop yang ingin dihapus: ";
+  cin >> indeks;
+  if (indeks < 1 || indeks > data.size()) {
+    cout << "Nomor data laptop tidak valid.\n";
+    return;
+  }
+  indeks--;
+  data.erase(data.begin() + indeks);
+  cout << "Data laptop berhasil dihapus.\n";
+}
 
 
 int main() {
